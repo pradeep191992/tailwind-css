@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "tailwind-css"
+  "defaultProject": "tailwind-css",
+  "cli": {
+    "analytics": false
+  }
 }
