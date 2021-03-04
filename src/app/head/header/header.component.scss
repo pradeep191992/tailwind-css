@@ -1,0 +1,13 @@
+.nav{
+  @apply h-16 py-1;
+}
+.logo{
+  img{
+    max-width: 132px;
+  }
+}
+.nav-list{
+  &-item{
+    @apply px-2 text-base font-medium whitespace-nowrap;
+  }
+}
