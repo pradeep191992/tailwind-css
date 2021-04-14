@@ -45,7 +45,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-3bfd8daf4826d335358d0bc0d1d0a626",
+            "id": "component-AppComponent-72ce9267bf88773075d9461d96e08c49",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -79,7 +79,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'tailwind-css';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'tailwind-css';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -92,7 +92,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
+            "id": "component-ButtonComponent-44f2f1e1b3a1e0ebc1e0edafd90d05c0",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -150,7 +150,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -170,6 +170,73 @@
                     }
                 }
             }
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-9527ecd387ac031dcdd843980190a2d6",
+            "file": "src/app/modules/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "card",
+            "styleUrls": [
+                "./card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "any"
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent implements OnInit {\n  constructor() { }\n  @Input() label: any;\n  @Input() primary = false;\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h2 class=\"text-black-600 text-lg leading-6 pt-4 mb-4\" *ngIf=\"primary\">test {{label}}</h2>\n<p>\n  Dummy text\n</p>\n"
         },
         {
             "name": "HeaderComponent",
@@ -350,7 +417,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-c5e874b7f4cc0283f0eaa85841e581e4",
+            "id": "component-HomeComponent-cd1e443949cf29c4df0b17af63fd67ed",
             "file": "src/app/feature/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -366,7 +433,13 @@
                 "./home.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "any"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -384,7 +457,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n// import Button from './button.component';\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n// import Button from './button.component';\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  styleUrls: ['./home.component.scss']\r\n})\r\nexport class HomeComponent implements OnInit {\r\n  constructor() { }\r\n  @Input() label:any;\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -402,7 +475,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\n<app-home-banner></app-home-banner>\n<!-- <storybook-button></storybook-button> -->\n\n<div class=\"min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8\">\n  <div class=\"max-w-md w-full space-y-8\">\n    <div>\n      <img class=\"mx-auto h-12 w-auto\" src=\"https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg\" alt=\"Workflow\">\n      <h2 class=\"mt-6 text-center text-3xl font-extrabold text-gray-900\">\n        Sign in to your account\n      </h2>\n      <p class=\"mt-2 text-center text-sm text-gray-600\">\n        Or\n        <a href=\"#\" class=\"font-medium text-indigo-600 hover:text-indigo-500\">\n          start your 14-day free trial\n        </a>\n      </p>\n    </div>\n    <form class=\"mt-8 space-y-6\" action=\"#\" method=\"POST\">\n      <input type=\"hidden\" name=\"remember\" value=\"true\">\n      <div class=\"rounded-md shadow-sm -space-y-px\">\n        <div>\n          <label for=\"email-address\" class=\"sr-only\">Email address</label>\n          <input id=\"email-address\" name=\"email\" type=\"email\" autocomplete=\"email\" required class=\"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm\" placeholder=\"Email address\">\n        </div>\n        <div>\n          <label for=\"password\" class=\"sr-only\">Password</label>\n          <input id=\"password\" name=\"password\" type=\"password\" autocomplete=\"current-password\" required class=\"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm\" placeholder=\"Password\">\n        </div>\n      </div>\n\n      <div class=\"flex items-center justify-between\">\n        <div class=\"flex items-center\">\n          <input id=\"remember_me\" name=\"remember_me\" type=\"checkbox\" class=\"h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded\">\n          <label for=\"remember_me\" class=\"ml-2 block text-sm text-gray-900\">\n            Remember me\n          </label>\n        </div>\n\n        <div class=\"text-sm\">\n          <a href=\"#\" class=\"font-medium text-indigo-600 hover:text-indigo-500\">\n            Forgot your password?\n          </a>\n        </div>\n      </div>\n\n      <div>\n        <button type=\"submit btn\" class=\"group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">\n          <span class=\"absolute left-0 inset-y-0 flex items-center pl-3\">\n            <!-- Heroicon name: solid/lock-closed -->\n            <svg class=\"h-5 w-5 text-indigo-500 group-hover:text-indigo-400\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" aria-hidden=\"true\">\n              <path fill-rule=\"evenodd\" d=\"M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z\" clip-rule=\"evenodd\" />\n            </svg>\n          </span>\n          Sign in\n        </button>\n      </div>\n    </form>\n  </div>\n</div>\n"
+            "templateData": "<card></card>\r\n<app-home-banner></app-home-banner>\r\n<!-- <storybook-button></storybook-button> -->\r\n<!-- <div class=\"min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8\">\r\n  <div class=\"max-w-md w-full space-y-8\">\r\n    <div>\r\n      <img class=\"mx-auto h-12 w-auto\" src=\"https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg\" alt=\"Workflow\">\r\n      <h2 class=\"mt-6 text-center text-3xl font-extrabold text-gray-900\">\r\n        Sign in to your account\r\n      </h2>\r\n      <p class=\"mt-2 text-center text-sm text-gray-600\">\r\n        Or\r\n        <a href=\"#\" class=\"font-medium text-indigo-600 hover:text-indigo-500\">\r\n          start your 14-day free trial\r\n        </a>\r\n      </p>\r\n    </div>\r\n    <form class=\"mt-8 space-y-6\" action=\"#\" method=\"POST\">\r\n      <input type=\"hidden\" name=\"remember\" value=\"true\">\r\n      <div class=\"rounded-md shadow-sm -space-y-px\">\r\n        <div>\r\n          <label for=\"email-address\" class=\"sr-only\">Email address</label>\r\n          <input id=\"email-address\" name=\"email\" type=\"email\" autocomplete=\"email\" required class=\"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm\" placeholder=\"Email address\">\r\n        </div>\r\n        <div>\r\n          <label for=\"password\" class=\"sr-only\">Password</label>\r\n          <input id=\"password\" name=\"password\" type=\"password\" autocomplete=\"current-password\" required class=\"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm\" placeholder=\"Password\">\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"flex items-center justify-between\">\r\n        <div class=\"flex items-center\">\r\n          <input id=\"remember_me\" name=\"remember_me\" type=\"checkbox\" class=\"h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded\">\r\n          <label for=\"remember_me\" class=\"ml-2 block text-sm text-gray-900\">\r\n            Remember me\r\n          </label>\r\n        </div>\r\n\r\n        <div class=\"text-sm\">\r\n          <a href=\"#\" class=\"font-medium text-indigo-600 hover:text-indigo-500\">\r\n            Forgot your password?\r\n          </a>\r\n        </div>\r\n      </div>\r\n\r\n      <div>\r\n        <button type=\"submit btn\" class=\"group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">\r\n          <span class=\"absolute left-0 inset-y-0 flex items-center pl-3\">\r\n            <svg class=\"h-5 w-5 text-indigo-500 group-hover:text-indigo-400\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" aria-hidden=\"true\">\r\n              <path fill-rule=\"evenodd\" d=\"M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z\" clip-rule=\"evenodd\" />\r\n            </svg>\r\n          </span>\r\n          Sign in\r\n        </button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div> -->\r\n"
         },
         {
             "name": "PageComponent",
@@ -539,6 +612,43 @@
             ]
         },
         {
+            "name": "CardModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "HomeModule",
             "children": [
                 {
@@ -559,6 +669,9 @@
                 {
                     "type": "imports",
                     "elements": [
+                        {
+                            "name": "CardModule"
+                        },
                         {
                             "name": "HomeRoutingModule"
                         }
@@ -635,6 +748,22 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
+                "name": "FirstCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "FourthCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -698,12 +827,28 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "SecondCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\r\n  component: CardComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -728,6 +873,14 @@
                 "file": "src/stories/Page.stories.ts",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+            },
+            {
+                "name": "ThirdCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -769,6 +922,48 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/card.stories.ts": [
+                {
+                    "name": "FirstCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "FourthCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SecondCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\r\n  component: CardComponent,\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "ThirdCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -947,7 +1142,7 @@
         ]
     },
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -983,7 +1178,7 @@
                 "linktype": "component",
                 "name": "HomeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -993,6 +1188,15 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -1133,6 +1337,56 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FirstCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FourthCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecondCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ThirdCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/header.component.ts",

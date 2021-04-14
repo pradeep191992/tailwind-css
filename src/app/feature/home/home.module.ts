@@ -1,3 +1,4 @@
+import { CardModule } from './../../modules/card/card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +11,8 @@ import { HomeBannerComponent } from './home-banner/home-banner.component';
   declarations: [HomeComponent, HomeBannerComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CardModule,
   ]
 })
 export class HomeModule { }
